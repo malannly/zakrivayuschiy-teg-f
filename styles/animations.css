@@ -16,7 +16,7 @@
 .theme-menu__button:focus-visible {
     cursor: pointer;
     animation: buttonfocusvisible 0.3s ease;
-  }
+}
   
   .theme-menu__button::before {
     content: '';
