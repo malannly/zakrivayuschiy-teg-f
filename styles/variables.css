@@ -19,5 +19,4 @@
        90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px
     ),
     repeating-linear-gradient(to bottom, #e7e7e7 0%, #1a1a1a 100%);
-    --background-img: url('../images/car-image.png');
 }
