@@ -4,3 +4,96 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root.theme-light {
+    --main-color: rgba(0, 0, 0, 1);
+    --wdth: 550;
+    --background-color-section: rgba(255, 255, 255, 1);
+    --accent-color: rgb(255, 255, 255);
+    --accent-color-bg: rgb(255, 255, 255);
+    --contour-heart: rgba(0, 0, 0, 1);
+    --filling-heart: rgba(255, 0, 0, 1);
+    --border-tag: rgb(255, 255, 255);
+    --background-color: repeating-linear-gradient(
+      180deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px
+    ),
+    repeating-linear-gradient(
+       90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px
+    ),
+    repeating-linear-gradient(to bottom, #e7e7e7 0%, #1a1a1a 100%);
+    --background-img: url('../images/car-image.png');
+}
+
+.theme-light .tag-img {
+    text-shadow:
+    1px 0 #ffffff;
+}
+
+@supports((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+    .theme-light .tag-img {
+        -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+        text-stroke: 0.5px rgb(255, 255, 255);
+        text-shadow: none;
+    }
+}
+
+:root.theme-dark {
+        --main-color: rgba(0, 204, 20, 1);
+        --wdth: 625;
+        --border-tag: rgba(0, 0, 0, 1);
+        --background-color-section: rgba(0, 0, 0, 1);
+        --accent-color:rgba(0, 0, 0, 1);
+        --accent-color-bg: rgba(0, 204, 20, 1);
+        --contour-heart: rgba(0, 204, 20, 1);
+        --filling-heart: rgba(255, 0, 0, 1);
+        --background-color: repeating-linear-gradient(
+            180deg, #000, #000 2px, transparent 2px, transparent 4px
+          ),
+          repeating-linear-gradient(
+             90deg, #000, #000 2px, transparent 2px, transparent 4px
+          ),
+          repeating-linear-gradient(to bottom, #007f0c 0%, #004306 100%);
+          --background-img: url('../images/car-image.png');
+}
+
+@media (prefers-color-scheme: dark) {
+:root {
+        --main-color: rgba(0, 204, 20, 1);
+        --wdth: 625;
+        --border-tag: rgba(0, 0, 0, 1);
+        --background-color-section: rgba(0, 0, 0, 1);
+        --accent-color: rgba(0, 0, 0, 1);
+        --accent-color-bg: rgba(0, 204, 20, 1);
+        --contour-heart: rgba(0, 204, 20, 1);
+        --filling-heart: rgba(255, 0, 0, 1);
+        --background-color: repeating-linear-gradient(
+            180deg, #000, #000 2px, transparent 2px, transparent 4px
+          ),
+          repeating-linear-gradient(
+             90deg, #000, #000 2px, transparent 2px, transparent 4px
+          ),
+          repeating-linear-gradient(to bottom, #007f0c 0%, #004306 100%);
+          --background-img: url('../images/car-image.png');
+}
+
+.title-section {
+    font-variation-settings: 'wght' 785;
+}
+
+.text-section {
+    font-variation-settings: 'wght' 465;
+}
+}
+
+.theme-dark .tag-img {
+    text-shadow:
+    1px 0 #000000;
+}
+
+@supports((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+    .theme-dark .tag-img {
+        -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+        text-stroke: 0.5px rgb(255, 255, 255);
+        text-shadow: none;
+    }
+}

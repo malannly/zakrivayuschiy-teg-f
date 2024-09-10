@@ -1,1 +1,23 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+/* В этом файле будут храниться все значения переменных в исходном состоянии, 
+а так же их изменения в зависимости от ширины устройства */
+
+:root {
+    --main-font: 'Inter-Variable', sans-serif;
+    --accent-font: 'Press Start 2P', sans-serif;
+    --wdth: 550;
+    --main-color: rgba(0, 0, 0, 1);
+    --accent-color: rgb(255, 255, 255);
+    --accent-color-bg: rgb(255, 255, 255);
+    --background-color-section: rgba(255, 255, 255, 1);
+    --contour-heart: rgba(0, 0, 0, 1);
+    --filling-heart: rgba(255, 0, 0, 1);
+    --border-tag: rgb(255, 255, 255);
+    --background-color: repeating-linear-gradient(
+      180deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px
+    ),
+    repeating-linear-gradient(
+       90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px
+    ),
+    repeating-linear-gradient(to bottom, #e7e7e7 0%, #1a1a1a 100%);
+    --background-img: url('../images/car-image.png');
+}

@@ -4,7 +4,7 @@
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
 ✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__like-button  — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
@@ -12,3 +12,198 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.theme-menu__button:focus-visible {
+    cursor: pointer;
+    animation: buttonfocusvisible 0.3s ease;
+  }
+  
+  .theme-menu__button::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-color);
+    transform: scaleX(0);
+    transform-origin: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .theme-menu__button:focus-visible::before {
+    transform: scaleX(1);
+  }
+  
+  @keyframes buttonfocusvisible {
+    0% {
+        translate: scaleX(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+  
+  .theme-menu__button:disabled::after {
+    position: absolute;
+    content: '▶';
+    color: var(--button-active);
+    left: -15px;
+    animation: moving 0.5s infinite ease-in-out alternate;
+  }
+  
+  @keyframes moving {
+    0% {
+      left: -19px;
+    }
+    100% {
+      left: -15px;
+    }
+  }
+
+.footer-con .footer-button:focus {
+    outline: none;
+    box-shadow: 2px 2px 0 2px var(--main-color);
+    transition: 0.3s ease;
+}
+
+.button_con:focus {
+    outline: none;
+    box-shadow: 2px 2px var(--main-color);
+    transition: 0.3s ease;
+}
+
+.button_con {
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    color: var(--main-color);
+}
+  
+.button_con::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background: var(--accent-color-bg);
+    transition: all 0.5s ease-in-out;
+    z-index: 0;
+    mix-blend-mode: difference;
+  }
+
+.button_con:hover::before {
+    transform: translateX(0%);
+  }
+
+.button__text, .svg-footer {
+    position: relative;
+    z-index: 1;
+}
+
+.button_con:hover {
+    color: var(--accent-color);
+}
+
+.svg-footer {
+    fill: var(--main-color);
+    transition: fill 0.5s ease-in-out;
+}
+
+.button_con:hover .svg-footer {
+    fill: var(--accent-color);
+}
+
+.card__icon-button:focus {
+    outline: none;
+  }
+
+.card__icon-button:focus-visible {
+    outline: none;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 0 2px var(--main-color);
+
+}
+
+.like-icon:hover {
+    cursor: pointer;
+}
+
+.like-icon:hover .core {
+    fill: var(--contour-heart);
+    transition: fill 0.3s linear 0s;
+}
+
+.core {
+    fill: transparent;
+    transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:hover .main-body {
+    fill: var(--contour-heart);
+    transition: fill 0.3s linear 0.05s;
+}
+
+.main-body {
+    fill: transparent;
+    transition: fill 0.3s linear 0s;
+}
+
+.like-icon:active .core {
+    fill: var(--filling-heart);
+    transition: fill 0.3s linear 0s;
+}
+
+.like-icon:active .main-body {
+    fill: var(--filling-heart);
+    transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+    fill: var(--filling-heart);
+    transition: fill 0.3s linear 0s;
+}
+
+.like-icon.is-liked .main-body {
+    fill: var(--filling-heart);
+    transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+    fill: var(--filling-heart);
+    transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon .contour {
+    fill: var(--contour-heart);
+    transition: fill 0.1s linear;
+}
+
+.like-icon.is-liked .heart {
+    animation: sizingheart 0.3s ease-in 0.1s;
+    transform-origin: center;
+}
+
+@keyframes sizingheart {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
+
+.like-icon.is-liked .sparks {
+    animation: sparkingheart 0.3s ease-in 0.3s;
+    transform-origin: center;
+}
+
+@keyframes sparkingheart {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
