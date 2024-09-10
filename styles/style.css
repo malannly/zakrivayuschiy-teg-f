@@ -214,7 +214,7 @@
 .like-button {
   border: 2px solid var(--main-color);
   block-size: 38px;
-  inline-size: 130px; 
+  inline-size: 130px;
 }
 
 .button_con {
@@ -271,7 +271,7 @@
   color: var(--main-color);
 }
 
-.footer-button {  
+.footer-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -373,7 +373,7 @@
     font-size: clamp(0rem, 0rem + 3.7333vw, 0.875rem);
   }
 
-  .card-section:first-child .title-section{
+  .card-section:first-child .title-section {
     block-size: 54px;
   }
 

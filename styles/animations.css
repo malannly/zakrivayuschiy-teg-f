@@ -74,7 +74,7 @@
 
 .button_con {
     position: relative;
-    transition: all 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
     overflow: hidden;
     color: var(--main-color);
 }
@@ -88,7 +88,7 @@
     height: 100%;
     transform: translateX(-100%);
     background: var(--accent-color-bg);
-    transition: all 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
     z-index: 0;
     mix-blend-mode: difference;
   }
