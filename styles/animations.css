@@ -4,7 +4,7 @@
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
 ✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button  — для кнопки Like рядом с иконкой
+✦ button  — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
@@ -15,7 +15,7 @@
 
 .theme-menu__button:focus-visible {
     cursor: pointer;
-    animation: buttonfocusvisible 0.3s ease;
+    position: relative;
 }
   
   .theme-menu__button::before {
@@ -32,15 +32,6 @@
   
   .theme-menu__button:focus-visible::before {
     transform: scaleX(1);
-  }
-  
-  @keyframes buttonfocusvisible {
-    0% {
-        translate: scaleX(0);
-    }
-    100% {
-        transform: scale(1);
-    }
   }
   
   .theme-menu__button:disabled::after {
@@ -60,26 +51,25 @@
     }
   }
 
-.footer-con .footer-button:focus {
-    outline: none;
-    box-shadow: 2px 2px 0 2px var(--main-color);
-    transition: 0.3s ease;
-}
-
-.button_con:focus {
-    outline: none;
-    box-shadow: 2px 2px var(--main-color);
-    transition: 0.3s ease;
-}
-
-.button_con {
+.button {
     position: relative;
     transition: 0.5s ease-in-out;
     overflow: hidden;
     color: var(--main-color);
 }
+
+.button:focus {
+    outline: none;
+    box-shadow: 2px 2px var(--main-color);
+    transition: 0.3s ease;
+}
+
+.aside-button:focus-visible {
+    transition: 0.3s ease;
+    box-shadow: 2px 2px 0 2px var(--main-color);
+}
   
-.button_con::before {
+.button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -93,37 +83,39 @@
     mix-blend-mode: difference;
   }
 
-.button_con:hover::before {
+.button:hover::before {
     transform: translateX(0%);
   }
 
-.button__text, .svg-footer {
+.button__text, .svg-floppy {
     position: relative;
     z-index: 1;
 }
 
-.button_con:hover {
+.button:hover {
     color: var(--accent-color);
 }
 
-.svg-footer {
+.svg-floppy {
     fill: var(--main-color);
     transition: fill 0.5s ease-in-out;
 }
 
-.button_con:hover .svg-footer {
+.button:hover .svg-floppy {
     fill: var(--accent-color);
+}
+
+.card__icon-button {
+    transition: box-shadow 0.3s ease;
 }
 
 .card__icon-button:focus {
     outline: none;
-  }
+}
 
 .card__icon-button:focus-visible {
     outline: none;
-    transition: box-shadow 0.3s ease;
     box-shadow: 0 0 0 2px var(--main-color);
-
 }
 
 .like-icon:hover {
@@ -183,6 +175,7 @@
 .like-icon.is-liked .heart {
     animation: sizingheart 0.3s ease-in 0.1s;
     transform-origin: center;
+    animation-direction: alternate;
 }
 
 @keyframes sizingheart {
@@ -197,6 +190,7 @@
 .like-icon.is-liked .sparks {
     animation: sparkingheart 0.3s ease-in 0.3s;
     transform-origin: center;
+    animation-direction: alternate;
 }
 
 @keyframes sparkingheart {

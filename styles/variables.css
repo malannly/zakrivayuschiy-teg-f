@@ -4,7 +4,8 @@
 :root {
     --main-font: 'Inter-Variable', sans-serif;
     --accent-font: 'Press Start 2P', sans-serif;
-    --wdth: 550;
+    --title-weight: 700;
+    --paragraph-weight: 400;
     --main-color: rgba(0, 0, 0, 1);
     --accent-color: rgb(255, 255, 255);
     --accent-color-bg: rgb(255, 255, 255);
@@ -18,5 +19,5 @@
     repeating-linear-gradient(
        90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px
     ),
-    repeating-linear-gradient(to bottom, #e7e7e7 0%, #1a1a1a 100%);
+    linear-gradient(180deg, #E7E7E7 0%, #1A1A1A 100%);
 }

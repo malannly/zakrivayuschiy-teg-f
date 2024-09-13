@@ -7,7 +7,8 @@
 
 :root.theme-light {
     --main-color: rgba(0, 0, 0, 1);
-    --wdth: 550;
+    --title-weight: 700;
+    --paragraph-weight: 400;
     --background-color-section: rgba(255, 255, 255, 1);
     --accent-color: rgb(255, 255, 255);
     --accent-color-bg: rgb(255, 255, 255);
@@ -20,26 +21,14 @@
     repeating-linear-gradient(
        90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px
     ),
-    repeating-linear-gradient(to bottom, #e7e7e7 0%, #1a1a1a 100%);
-}
-
-.theme-light .tag-img {
-    text-shadow:
-    1px 0 #ffffff;
-}
-
-@supports((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
-    .theme-light .tag-img {
-        -webkit-text-stroke: 0.5px rgb(255, 255, 255);
-        text-stroke: 0.5px rgb(255, 255, 255);
-        text-shadow: none;
-    }
+    linear-gradient(180deg, #E7E7E7 0%, #1A1A1A 100%);
 }
 
 :root.theme-dark {
         --main-color: rgba(0, 204, 20, 1);
-        --wdth: 625;
-        --border-tag: rgba(0, 0, 0, 1);
+        --title-weight: 785;
+        --paragraph-weight: 465;
+        --border-tag: rgba(0, 204, 20, 1);
         --background-color-section: rgba(0, 0, 0, 1);
         --accent-color:rgba(0, 0, 0, 1);
         --accent-color-bg: rgba(0, 204, 20, 1);
@@ -51,14 +40,15 @@
           repeating-linear-gradient(
              90deg, #000, #000 2px, transparent 2px, transparent 4px
           ),
-          repeating-linear-gradient(to bottom, #007f0c 0%, #004306 100%);
+        linear-gradient(180deg, #007F0C 0%, #004306 100%);
 }
 
 @media (prefers-color-scheme: dark) {
 :root {
         --main-color: rgba(0, 204, 20, 1);
-        --wdth: 625;
-        --border-tag: rgba(0, 0, 0, 1);
+        --title-weight: 785;
+        --paragraph-weight: 465;
+        --border-tag: rgba(0, 204, 20, 1);
         --background-color-section: rgba(0, 0, 0, 1);
         --accent-color: rgba(0, 0, 0, 1);
         --accent-color-bg: rgba(0, 204, 20, 1);
@@ -70,27 +60,6 @@
           repeating-linear-gradient(
              90deg, #000, #000 2px, transparent 2px, transparent 4px
           ),
-          repeating-linear-gradient(to bottom, #007f0c 0%, #004306 100%);
+          linear-gradient(180deg, #007F0C 0%, #004306 100%);
 }
-
-.title-section {
-    font-variation-settings: 'wght' 785;
-}
-
-.text-section {
-    font-variation-settings: 'wght' 465;
-}
-}
-
-.theme-dark .tag-img {
-    text-shadow:
-    1px 0 #000000;
-}
-
-@supports((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
-    .theme-dark .tag-img {
-        -webkit-text-stroke: 0.5px rgb(0, 0, 0);
-        text-stroke: 0.5px rgb(255, 255, 255);
-        text-shadow: none;
-    }
 }

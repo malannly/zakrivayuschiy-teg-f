@@ -21,8 +21,10 @@
   font-family: var(--main-font), sans-serif;
   font-weight: 400;
   color: var(--main-color);
-  background: var(--background-color);
+  background-size: cover;
+  background-image: var(--background-color);
   display: block;
+  background-attachment: fixed;
 }
 
 .header {
@@ -45,12 +47,13 @@
 .header-link {
   text-decoration: none;
   cursor: pointer;
-}
-
-.title-header {
   padding-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   line-height: 1;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header-link:focus {
+  outline: none;
 }
 
 .text-header {
@@ -92,6 +95,7 @@
   line-height: 1;
   position: relative;
   transition: 0.3s ease;
+  cursor: pointer;
 }
 
 .theme-menu__button:disabled {
@@ -126,13 +130,20 @@
   line-height: 1.21;
   padding: 0 10px;
   font-size: 18px;
-  font-variation-settings: 'wght' 700;
+  font-variation-settings: "wght" var(--title-weight);
   margin-inline-end: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  block-size: 33px;
+  min-block-size: 33px;
 }
+
+@supports (font-variation-settings: normal) {
+  .title-section {
+      font-family: 'Inter-Variable', sans-serif;
+      font-weight: 700 785;
+  }
+} 
 
 .img-con {
   inline-size: 100%;
@@ -160,6 +171,32 @@
   z-index: 1;
 }
 
+.theme-light .tag-img {
+  text-shadow:
+  1px 0 #ffffff;
+}
+
+.theme-dark .tag-img {
+  text-shadow:
+  1px 0 #000000;
+}
+
+@supports((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+  .theme-light .tag-img {
+      -webkit-text-stroke: 1px rgb(255, 255, 255);
+      text-stroke: 1px rgb(255, 255, 255);
+      text-shadow: none;
+  }
+}
+
+@supports((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+  .theme-dark .tag-img {
+      -webkit-text-stroke: 1px rgba(0, 204, 20, 1);
+      text-stroke: 1px rgb(255, 255, 255);
+      text-shadow: none;
+  }
+}
+
 .img-section {
   display: block;
   inline-size: 100%;
@@ -180,8 +217,15 @@
 .text-section {
   line-height: 1.167;
   font-size: 18px;
-  font-variation-settings: 'wght' 400;
+  font-variation-settings: "wght" var(--paragraph-weight);
 }
+
+@supports (font-variation-settings: normal) {
+  .text-section {
+      font-family: 'Inter-Variable', sans-serif;
+      font-weight: 400 465;
+  }
+} 
 
 .like {
   margin-inline-start: auto;
@@ -196,6 +240,7 @@
 }
 
 .card__icon-button {
+  cursor: pointer;
   padding: 0;
   margin: 0;
   background-color: transparent;
@@ -207,21 +252,21 @@
 }
 
 .like-icon {
+  cursor: pointer;
   display: block;
   margin: auto;
 }
 
-.like-button {
+.card__like-button {
+  cursor: pointer;
+  background-color: transparent;
   border: 2px solid var(--main-color);
   block-size: 38px;
   inline-size: 130px;
 }
 
-.button_con {
-  background-color: transparent;
-}
-
 .button__text {
+  cursor: pointer;
   background-color: transparent;
   font-family: var(--accent-font);
   line-height: 0.9;
@@ -257,7 +302,7 @@
   filter: brightness(130%) contrast(75%) sepia(30%) hue-rotate(90deg) blur(2px);
 }
 
-.footer {
+.aside {
   margin: 0 auto;
   inline-size: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
   margin-block-start: 50px;
@@ -267,11 +312,11 @@
 
 }
 
-.footer-con {
+.aside-con {
   color: var(--main-color);
 }
 
-.footer-button {
+.aside-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -281,9 +326,10 @@
   block-size: 100%;
   padding: 15px 0;
   border: none;
+  background-color: transparent;
 }
 
-.svg-footer {
+.svg-floppy {
   inline-size: 21px;
   block-size: 21px;
   color: var(--main-color);
@@ -327,6 +373,7 @@
   flex-direction: row;
   gap: 20px;
   inline-size: 100%;
+  block-size: 100%;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -341,6 +388,7 @@
 }
 
 .close-button {
+  cursor: pointer;
   padding: 0;
   inline-size: 100%;
   block-size: 38px;
@@ -352,7 +400,7 @@
 }
 
 .svg-dialog {
-  inline-size: 77px;
+  inline-size: 85px;
   block-size: 39px;
   color: var(--main-color);
   fill: var(--main-color);
@@ -364,7 +412,7 @@
     inline-size: 100%;
   }
 
-  .title-header {
+  .header-link {
     font-size: clamp(0rem, 0rem + 13.0667vw, 3.0625rem);
     padding-block-start: clamp(7.5rem, 7.5rem + 0vw, 7.5rem);
   }
@@ -374,30 +422,30 @@
   }
 
   .card-section:first-child .title-section {
-    block-size: 54px;
+    min-block-size: 54px;
   }
 
   .tag-img {
     right: 13px;
   }
 
-  .footer {
+  .aside {
     inline-size: clamp(0rem, 0rem + 81.6vw, 19.125rem);
     flex-direction: column;
   }
 
-  .footer-button {
+  .aside-button {
     flex-direction: column;
   }
 
-  .svg-footer {
+  .svg-floppy {
     inline-size: 28px;
     block-size: 28px;
   }
 
   .dialog {
     inline-size: clamp(0rem, 0rem + 90.9333vw, 21.3125rem);
-    padding: 30px 42px;
+    padding: 30px 40px;
   }
 
 }
