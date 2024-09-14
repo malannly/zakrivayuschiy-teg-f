@@ -253,19 +253,17 @@
   overflow: hidden;
   color: var(--main-color-button);
   mix-blend-mode: difference;
+  cursor: pointer;
+  border: 2px solid var(--main-color-button);
+  background-color: transparent;
 }
 
 .card__like-button {
-  cursor: pointer;
-  background-color: transparent;
-  border: 2px solid var(--main-color-button);
   block-size: 38px;
   inline-size: 130px;
 }
 
 .button__text {
-  cursor: pointer;
-  background-color: transparent;
   font-family: var(--accent-font);
   line-height: 0.9;
   font-size: 14px;
@@ -316,8 +314,6 @@
   inline-size: 100%;
   block-size: 100%;
   padding: 15px 0;
-  background-color: transparent;
-  border: 2px solid var(--main-color-button);
 }
 
 .svg-floppy {
@@ -379,12 +375,9 @@
 }
 
 .close-button {
-  cursor: pointer;
   padding: 0;
   inline-size: 100%;
   block-size: 38px;
-  background-color: transparent;
-  border: 2px solid var(--main-color-button);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -416,9 +409,8 @@
     padding: 5.5px 10px 5.5px 10px;
   }
 
-
   .card-section:first-child .title-section {
-    padding: 6px 12px 6px 10px;
+    padding: 4px 12px 6px 10px;
   }
 
   .tag-img {
