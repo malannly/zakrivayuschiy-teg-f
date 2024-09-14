@@ -7,11 +7,12 @@
     --title-weight: 700;
     --paragraph-weight: 400;
     --main-color: rgba(0, 0, 0, 1);
-    --accent-color: rgb(255, 255, 255);
-    --accent-color-bg: rgb(255, 255, 255);
+    --main-color-button: rgb(255, 255, 255);
+    --hover-button: rgb(255, 255, 255);
     --background-color-section: rgba(255, 255, 255, 1);
     --contour-heart: rgba(0, 0, 0, 1);
     --filling-heart: rgba(255, 0, 0, 1);
+    --border-tag-color: rgb(255, 255, 255);
     --border-tag: rgb(255, 255, 255);
     --background-color: repeating-linear-gradient(
       180deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px

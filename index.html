@@ -98,7 +98,7 @@
                    13H3V16H0V13Z" fill="var(--filling-heart)"/>
               </svg>
             </button>
-            <button type="button" class="button card__like-button">
+            <button type="button" class="button button_hover button_focus card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -159,7 +159,7 @@
                    13H3V16H0V13Z" fill="var(--filling-heart)"/>
               </svg>
             </button>
-            <button type="button" class="button card__like-button">
+            <button type="button" class="button button_hover button_focus card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -216,7 +216,7 @@
                    13H3V16H0V13Z" fill="var(--filling-heart)"/>
               </svg>
             </button>
-            <button type="button" class="button card__like-button">
+            <button type="button" class="button button_hover button_focus card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -276,7 +276,7 @@
                    13H3V16H0V13Z" fill="var(--filling-heart)"/>
               </svg>
             </button>
-            <button type="button" class="button card__like-button">
+            <button type="button" class="button button_hover button_focus card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -340,7 +340,7 @@
                    13H3V16H0V13Z" fill="var(--filling-heart)"/>
               </svg>
             </button>
-            <button type="button" class="button card__like-button">
+            <button type="button" class="button button_hover button_focus card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -396,7 +396,7 @@
                    13H3V16H0V13Z" fill="var(--filling-heart)"/>
               </svg>
             </button>
-            <button type="button" class="button card__like-button">
+            <button type="button" class="button button_hover button_focus card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -457,7 +457,7 @@
                    13H3V16H0V13Z" fill="var(--filling-heart)"/>
               </svg>
             </button>
-            <button type="button" class="button card__like-button">
+            <button type="button" class="button button_hover button_focus card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -466,7 +466,7 @@
           <h2 class="title-section">«Сейчас я здесь»</h2>
           <div class="img-con">
             <span class="tag-img">&lt;experience&gt;</span>
-            <img src="./images/car-image.png" alt="машина" class="img-section img-blur-color" loading="lazy" >
+            <img src="./images/car-image.png" alt="машина" class="img-section  img-blur-color" loading="lazy" >
           </div>
           <div class="text-section-con">
             <p class="text-section">Сейчас вы 
@@ -521,23 +521,21 @@
                    13H3V16H0V13Z" fill="var(--filling-heart)"/>
               </svg>
             </button>
-            <button type="button" class="button card__like-button">
+            <button type="button" class="button button_hover button_focus card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
         </section>
-        <aside class="aside">
-          <div class="aside-con">
-            <button type="button" class="aside-button button"
-             onclick="window['dialog-id'].showModal();" 
-            aria-controls="dialog-id">
-              <svg class="svg-floppy">
-                <use href="svg/floppy.svg#floppy-svg"></use>
-              </svg>
-              <span class="button__text">Сохранить на&nbsp;память</span>
-            </button>
-          </div>
-        </aside>
+        <div class="modal_con">
+          <button type="button" class="modal_button button_hover button_focus button"
+            onclick="window['dialog-id'].showModal();" 
+          aria-controls="dialog-id">
+            <svg class="svg-floppy">
+              <use href="svg/floppy.svg#floppy-svg"></use>
+            </svg>
+            <span class="button__text">Сохранить на&nbsp;память</span>
+          </button>
+        </div>
       </main>
       <dialog class="dialog" id="dialog-id">
         <form class="form" method="dialog">
@@ -548,7 +546,7 @@
             <p class="dialog-text">Вставьте
             дискету, чтобы продолжить</p>
           </div>
-          <button type="button" onclick="window['dialog-id'].close();"  class="button close-button">
+          <button type="button" onclick="window['dialog-id'].close();"  class="button button_hover button_focus close-button">
             <span class="button__text">OK</span>
           </button>
         </form>
